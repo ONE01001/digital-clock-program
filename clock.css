@@ -1,0 +1,21 @@
+body{
+    background-image:url(desktop-wallpaper-pure-black-color.png);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    margin:0 ;
+}
+#clock-container{
+    display:flex; 
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+}
+#clock{
+    font-family:monospace;
+    font-size: 100px;
+    text-align:center;
+    color: aliceblue;
+
+}
