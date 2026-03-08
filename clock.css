@@ -1,21 +1,59 @@
-body{
-    background-image:url(desktop-wallpaper-pure-black-color.png);
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    background-attachment:fixed;
-    margin:0 ;
+body {
+    background-image: url(desktop-wallpaper-pure-black-color.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
 }
-#clock-container{
-    display:flex; 
-    justify-content:center;
-    align-items:center;
+
+#clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    padding: 0 10px;
+    /* Some padding so it doesn't touch the screen edge */
+    box-sizing: border-box;
 }
+
 #clock{
-    font-family:monospace;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
     font-size: 100px;
     text-align:center;
     color: aliceblue;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6); /* Clean white glow */
+    animation: pulse 2.5s infinite ease-in-out;
+    white-space: nowrap; /* Prevent clock from breaking to next line */
+}
 
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 
+            0 0 15px rgba(255, 255, 255, 1),
+            0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Tablet size */
+@media (max-width: 800px) {
+    #clock {
+        font-size: 70px;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    #clock {
+        font-size: 11dvw;
+        /* Autoscale with screen width (11vw fits the time nicely) */
+    }
 }
